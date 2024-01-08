@@ -40,10 +40,11 @@ RUN curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/in
 # AZCLI
 RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
-# NeoVim
-RUN add-apt-repository ppa:neovim-ppa/unstable -y
-RUN apt update -y
-RUN apt install neovim -y
+# Bicep
+curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+chmod +x ./bicep
+mv ./bicep /usr/local/bin/bicep
+
 
 # Dotfiles
 
